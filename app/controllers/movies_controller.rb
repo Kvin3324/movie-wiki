@@ -4,7 +4,12 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    if params[:category].blank?
+      @movies = Movie.all
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @movies = Movie.where(category_id: @category_id)
+    end
   end
 
   # GET /movies/1
@@ -69,6 +74,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :description, :imgae_url, :teaser, :rating)
+      params.require(:movie).permit(:title, :description, :imgae_url, :teaser, :rating, :category_id)
     end
 end
