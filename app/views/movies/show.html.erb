@@ -10,10 +10,14 @@
 
 <h1><%= @movie.title %></h1>
 
-<p>
+<div class="about">
   <strong>Synopsis:</strong>
-  <%= image_tag @movie.image_url, align: 'right' %>
-  <%= @movie.description %>
+  <p><%= @movie.description %></p>
+
+</div>
+    <% if @movie.image_url %>
+    <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    <% end %>
 </p>
 
 <p>
@@ -23,7 +27,9 @@
 
   <%= @movie.rating %>
 
-<%= if user_signed_in? %>
-<%= link_to 'Edit', edit_movie_path(@movie) %> 
-<% end %>
-<%= link_to 'Back', movies_path %>
+<div class="links-sign-in mb-5">
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_movie_path(@movie) %> |
+  <% end %>
+  <%= link_to 'Back', movies_path %>
+</div>
