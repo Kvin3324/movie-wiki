@@ -652,3 +652,1028 @@ Migrating to AddCategoryToMovies (20190517125144)
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name") VALUES (?)[0m  [["name", "War"]]
   [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies" for ::1 at 2019-05-17 15:15:27 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (4.7ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 38ms (Views: 22.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2019-05-17 15:15:30 +0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (12.8ms)
+  Rendered movies/new.html.erb within layouts/application (15.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 38ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/movies" for ::1 at 2019-05-17 15:15:57 +0200
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6gLogaecmrTLEyHWjaYwgxkAL1ZaZFzLHkzElgovNWlm7/AyS/cOaUUkGTL3oksBCqkvyokqNkYYWwFYSZVk2w==", "movie"=>{"title"=>"Avengers", "body"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit"}
+Unpermitted parameters: :body, :image_url
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:35
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/movies_controller.rb:35
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (3.4ms)
+  Rendered movies/new.html.erb within layouts/application (6.3ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 48ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:16:05 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-17 15:16:11 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 46ms (Views: 33.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-17 15:16:14 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2019-05-17 15:16:24 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kXj12jsf5JqOTek1R/Ucy6gEbjZ5tAWpml3FTFHZkIhmC13SXXXjF6/kRoxxC/6E548+UZ/ZxIXrS2/Qpyut9g==", "user"=>{"email"=>"mcjo@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mcjo@gmail.com"], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "mcjo@gmail.com"], ["encrypted_password", "$2a$11$CLD3Fu3dipQbA0IT6p5yHOzrxed1NndQZV4TPVWajpAwLZDwprzye"], ["created_at", "2019-05-17 13:16:24.593922"], ["updated_at", "2019-05-17 13:16:24.593922"]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 149ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 15:16:24 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/new" for ::1 at 2019-05-17 15:16:26 +0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (3.0ms)
+  Rendered movies/new.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/movies" for ::1 at 2019-05-17 15:16:44 +0200
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nAlr+ymUkh/FgjGesGfmxYteLXxv/sgYzUaeb/ybcm0Q5HNIxf8Gwku1CXrKY51HmPct4LywopXLUVuhvyEj3w==", "movie"=>{"title"=>"Avengers", "body"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit"}
+Unpermitted parameters: :body, :image_url
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:35
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:35
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/movies_controller.rb:35
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (3.6ms)
+  Rendered movies/new.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/movies" for ::1 at 2019-05-17 15:18:28 +0200
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Of1GsY16uZKIhhe+6FgeuuEfdHjKeB1ZaS4NMUJz4AO1EF4CYREtTwaxL1qSXGU48rZ05Bk2d9RvOcj/AcmxsQ==", "movie"=>{"title"=>"Avengers", "body"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameters: :body, :image_url
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:37
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:37
+  [1m[36mMovie Create (0.4ms)[0m  [1m[32mINSERT INTO "movies" ("title", "teaser", "rating", "created_at", "updated_at", "category_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Avengers"], ["teaser", "https://www.youtube.com/watch?v=rGhM6Xc9mJM"], ["rating", 5], ["created_at", "2019-05-17 13:18:29.113437"], ["updated_at", "2019-05-17 13:18:29.113437"], ["category_id", 2]]
+  ↳ app/controllers/movies_controller.rb:37
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:37
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 60ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:18:29 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/kevinjoya/github/Kvin3324/movie-wiki/app/views/movies/show.html.erb:26: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+.append=( if user_signed_in? );@output_buffer.safe_append='
+                              ^
+/Users/kevinjoya/github/Kvin3324/movie-wiki/app/views/movies/show.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/kevinjoya/github/Kvin3324/movie-wiki/app/views/movies/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/kevinjoya/github/Kvin3324/movie-wiki/app/views/movies/show.html.erb:34: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/movies/show.html.erb:26: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/movies/show.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+app/views/movies/show.html.erb:32: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/movies/show.html.erb:34: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:19:15 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= image_tag @movie.image_url, align: 'right' %>
+    16:   <%= @movie.description %>
+    17: </p>
+    18: 
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146290838920'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:19:45 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    16: 
+    17:   <%= @movie.description %>
+    18: </p>
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146324667200'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:20:51 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    16: 
+    17:   <%= @movie.description %>
+    18: </p>
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146317179680'
+Started PUT "/__web_console/repl_sessions/55264763fbbec9ae703482df4afce025" for ::1 at 2019-05-17 15:20:54 +0200
+Started PUT "/__web_console/repl_sessions/55264763fbbec9ae703482df4afce025" for ::1 at 2019-05-17 15:20:54 +0200
+Started GET "/movies/1" for ::1 at 2019-05-17 15:21:16 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    16: 
+    17:   <%= @movie.description %>
+    18: </p>
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146295704060'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:22:18 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    16: 
+    17:   <%= @movie.description %>
+    18: </p>
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146290694720'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:23:47 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (13.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 47ms (Views: 37.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:23:53 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:23:54 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:24:04 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (2.9ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 14.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:24:05 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:24:23 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `description' for nil:NilClass):
+    12: 
+    13: <p>
+    14:   <strong>Synopsis:</strong>
+    15:   <%= @movies.description %>
+    16:     <% if @movie.image_url %>
+    17:     <%= image_tag @movie.image_url, align: 'right', style: 'padding-left: 30px;' %>
+    18:     <% end %>
+  
+app/views/movies/show.html.erb:15:in `_app_views_movies_show_html_erb___2909479167857852740_70146286140920'
+Started GET "/movies/1" for ::1 at 2019-05-17 15:24:40 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:20 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:21 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 15ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:22 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:23 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:23 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (3.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:24 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:24 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:25:26 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:27 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:25:28 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (3.2ms)
+  Rendered movies/edit.html.erb within layouts/application (6.2ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 34ms (Views: 15.3ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/movies/1" for ::1 at 2019-05-17 15:25:48 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HzvjCHmXRHdzrOF6nkBuTG1Pu99TaDNVt4I/FvWRiuo9w4+S7W3hue6gNdgVZ0akCtxWgLB21L096wtxRPnZ7w==", "movie"=>{"title"=>"Avengers", "body"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :body
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mMovie Update (0.5ms)[0m  [1m[33mUPDATE "movies" SET "image_url" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["image_url", "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743"], ["updated_at", "2019-05-17 13:25:48.016668"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:48 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.2ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:25:52 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:25:55 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:32
+  Rendered movies/show.html.erb within layouts/application (2.5ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:26:16 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (2.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:26:17 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:26:22 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:30
+  Rendered movies/show.html.erb within layouts/application (3.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:26:44 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (2.0ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:26:45 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:29
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:27:06 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (2.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:27:06 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:28:26 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (3.9ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies/new" for ::1 at 2019-05-17 15:28:36 +0200
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/new.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (6.0ms)
+  Rendered movies/new.html.erb within layouts/application (8.9ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 28ms (Views: 22.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:28:42 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 18ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:28:48 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (2.4ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:28:52 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (13.7ms)
+  Rendered movies/edit.html.erb within layouts/application (16.2ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/movies/1" for ::1 at 2019-05-17 15:29:02 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WmoW20ChkBPceJCqvSHFJHf/Fef5h1dmQZtJtMvUCEF4knpB1Fs13UF0RAg2Bu3MEGz4uBqZsI7L8n3TerxbRA==", "movie"=>{"title"=>"Avengers", "body"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :body
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 13ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:29:02 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (1.9ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:29:04 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 19ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:29:05 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 20ms (Views: 14.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:29:06 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (6.5ms)
+  Rendered movies/edit.html.erb within layouts/application (9.2ms)
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 31ms (Views: 21.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:31:47 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.1ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:31:50 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.4ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:31:52 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (2.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:31:54 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (3.8ms)
+  Rendered movies/edit.html.erb within layouts/application (6.5ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/movies/1" for ::1 at 2019-05-17 15:31:57 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIxO3nJvGgX38Hy74aIc3h/2WTduRCoHb8ykjMufZkEWdCJE5pW/y2r8qBlqhTQ2eGW0aI1aze/lpZDrevc1RA==", "movie"=>{"title"=>"Avengers", "description"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjZlNnwjaDiAhUC4YUKHclPAJ8QjRx6BAgBEAU&url=https%3A%2F%2Fgeeko.lesoir.be%2F2019%2F05%2F10%2Favengers-endgame-arrivera-le-11-decembre-en-streaming%2F&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["description", "Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III."], ["updated_at", "2019-05-17 13:31:57.425169"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 13ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:31:57 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (1.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 25ms (Views: 19.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:33:31 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (4.0ms)
+  Rendered movies/edit.html.erb within layouts/application (7.6ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/movies/1" for ::1 at 2019-05-17 15:33:36 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ero1iRqeaZ4AokhO1XpBYZ7aJ1nOHzSQESvuyevZ4/NYQlkTjmTMUJ2unOxeXWmJ+UnKBi0B03ibQtquWrGw9g==", "movie"=>{"title"=>"Avengers", "description"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwigsYfr1qLiAhXEz4UKHQnDB7YQjRx6BAgBEAU&url=http%3A%2F%2Fwww.allocine.fr%2Ffilm%2Ffichefilm_gen_cfilm%3D232669.html&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mMovie Update (2.0ms)[0m  [1m[33mUPDATE "movies" SET "image_url" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["image_url", "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwigsYfr1qLiAhXEz4UKHQnDB7YQjRx6BAgBEAU&url=http%3A%2F%2Fwww.allocine.fr%2Ffilm%2Ffichefilm_gen_cfilm%3D232669.html&psig=AOvVaw2za_RKaxc_KOC_AzNjUUxO&ust=1558098095810743"], ["updated_at", "2019-05-17 13:33:36.685328"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 15ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:33:36 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (5.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2019-05-17 15:34:32 +0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering movies/edit.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/movies/_form.html.erb:32
+  Rendered movies/_form.html.erb (5.3ms)
+  Rendered movies/edit.html.erb within layouts/application (8.2ms)
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 27ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/movies/1" for ::1 at 2019-05-17 15:34:35 +0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xOPa5wZWu3I8lNoTDxqOvJULesP7Q5Xx4kkq2rN7kqrmG7Z9kqwevKGYDrGEPaZU8piXnBhdchloIB69AhPBrw==", "movie"=>{"title"=>"Avengers", "description"=>"Avengers: Endgame ou Avengers : Phase finale au Québec est un film américain réalisé par Anthony et Joe Russo, sorti en 2019. Il met en scène l'équipe de super-héros des comics Marvel, les Avengers. Il s'agit du 22ᵉ film de l'Univers cinématographique Marvel, débuté en 2008 et du 10ᵉ et avant-dernier de la phase III.", "image_url"=>"https://www.ecranlarge.com/media/cache/637x252/uploads/articles/000/000/000/avengers-endgame-affiche-1073586-large.jpg", "teaser"=>"https://www.youtube.com/watch?v=rGhM6Xc9mJM", "category_id"=>"2", "rating"=>"5"}, "commit"=>"Submit", "id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/kevinjoya/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "image_url" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["image_url", "https://www.ecranlarge.com/media/cache/637x252/uploads/articles/000/000/000/avengers-endgame-affiche-1073586-large.jpg"], ["updated_at", "2019-05-17 13:34:35.833071"], ["id", 1]]
+  ↳ app/controllers/movies_controller.rb:51
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:51
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 14ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/movies/1" for ::1 at 2019-05-17 15:34:35 +0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:74
+  Rendering movies/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/movies/show.html.erb:31
+  Rendered movies/show.html.erb within layouts/application (2.6ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for ::1 at 2019-05-17 15:34:45 +0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:10
+  Rendered movies/index.html.erb within layouts/application (2.3ms)
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
