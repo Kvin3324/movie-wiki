@@ -1,35 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Imgae url</th>
-      <th>Teaser</th>
-      <th>Rating</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if request.original_url.split('=').last.include? '/' %>
+ <h1>All movies</h1>
+<% else %>
+<h1>All <%= request.original_url.split('=').last %> Movies </h1>
+<% end %>
 
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.description %></td>
-        <td><%= movie.imgae_url %></td>
-        <td><%= movie.teaser %></td>
-        <td><%= movie.rating %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @movies.each do |movie| %>
+<h2><%= link_to movie.title, movie %></h2>
+<p><%= truncate(movie.description, length: 200) %></p>
+<% end %>
 
 <%= link_to 'New Movie', new_movie_path %>
+
+

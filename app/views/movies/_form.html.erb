@@ -1,42 +1,47 @@
-<%= form_with(model: movie, local: true) do |form| %>
-  <% if movie.errors.any? %>
+<%= form_with(model: @movie, local: true) do |form| %>
+  <% if @movie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+      <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
 
       <ul>
-      <% movie.errors.full_messages.each do |message| %>
+      <% @movie.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="container-fluid">
+    <div class="form-group mt-3">
+        <%= form.text_field :title, class: 'form-control', placeholder: 'Title of movie' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.text_area :body, class: 'form-control', placeholder: 'Movie description' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.text_field :image_url, class: 'form-control', placeholder: 'Image URL' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.text_field :teaser, class: 'form-control', placeholder: 'Teaser' %>
+    </div>
+
+    <div class="c-select">
+        <%= form.collection_select :category_id, Category.all, :id, :name,
+        {prompt: 'Choose a Category'}, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= form.text_field :rating, class: 'form-control', placeholder: 'Rating' %>
+    </div>
+
+    <div class="form-group mt-3">
+        <%= form.submit 'Submit', class: 'btn btn-default btn-primary' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :imgae_url %>
-    <%= form.text_field :imgae_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :teaser %>
-    <%= form.text_field :teaser %>
-  </div>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+<%= link_to 'Back', movies_path %>
